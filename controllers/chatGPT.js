@@ -5,7 +5,7 @@ exports.consulta = (req, res, message) => {
         .createCompletion({
             model: "text-davinci-003",
             // Agregamos a la conversación el mesansaje en cuestión
-            prompt: message,
+            prompt: "Crea un cuento" + message,
             temperature: 0.9,
             max_tokens: 4006,
             top_p: 1,
