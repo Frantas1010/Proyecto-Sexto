@@ -23,7 +23,3 @@ app.set('views', './views');
 app.use('/', myRouter);
 module.exports = app
 
-
-a
-
-
