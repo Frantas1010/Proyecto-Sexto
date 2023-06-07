@@ -20,3 +20,23 @@ app.set('views', './views');
 
 app.use('/', myRouter);
 module.exports = app
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var seccionGenero = document.getElementById("seccionGenero");
+        var seccionEdad = document.getElementById("seccionEdad"); 
+        var generoSeleccionado = "";
+        var edadSeleccionada = "";
+        seccionGenero.addEventListener("click", function(event) {
+            if (event.target.classList.contains("genero")) {
+            generoSeleccionado = event.target.textContent;
+            console.log("Género seleccionado: " + generoSeleccionado);
+        }
+    });
+        seccionEdad.addEventListener("click", function(event) {
+            if (event.target.classList.contains("edad")) {
+                edadSeleccionada = event.target.textContent;
+                console.log("Edad seleccionada: " + edadSeleccionada);
+        }
+    });
+});
