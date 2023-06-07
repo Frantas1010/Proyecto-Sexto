@@ -4,21 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-    <script src="../controllers/chatGPT.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <title>Formulario</title>
+    <script>
+        $(document).ready(function() {
+            $('#edadSelect, #generoSelect').select2({
+                tags: true,
+                placeholder: 'Selecciona una opción o crea una nueva'
+            });
+
+            $('#edadSelect, #generoSelect').on('change', function() {
+                var edadSelectedOptions = $('#edadSelect').val();
+                var generoSelectedOptions = $('#generoSelect').val();
+                var resultText = '';
+
+                if (edadSelectedOptions && edadSelectedOptions.length > 0) {
+                    resultText += 'Edad: ' + edadSelectedOptions.join(', ') + '<br>';
+                }
+
+                if (generoSelectedOptions && generoSelectedOptions.length > 0) {
+                    resultText += 'Género: ' + generoSelectedOptions.join(', ');
+                }
+
+                $('#result').html(resultText);
+            });
+        });
+    </script>
 </head>
 <body>
-    <form action="consultar" method="post">
-        <div id="seccionGenero">
-            <button class="genero">Terror</button>
-            <button class="genero">Comedia</button>
-            <button class="genero">Drama</button>
-        </div>
-        <div id="seccionEdad">
-            <button class="edad">niños</button>
-            <button class="edad">Adolescente</button>
-            <button class="edad">Adulto</button>
-        </div>
-    </form>
+    <h2>Edad</h2>
+    <select id="edadSelect" multiple="multiple">
+        <option value="niños">Niños</option>
+        <option value="jovenes">Jóvenes</option>
+        <option value="adultos">Adultos</option>
+    </select>
+
+    <h2>Género</h2>
+    <select id="generoSelect" multiple="multiple">
+        <option value="accion">Acción</option>
+        <option value="comedia">Comedia</option>
+        <option value="terror">Terror</option>
+    </select>
+
+    <div id="result"></div>
+
+
 </body>
-</html> 
+</html>
