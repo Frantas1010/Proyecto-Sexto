@@ -18,7 +18,7 @@ require('dotenv').config();
 app.use(express.json());
 //Configurando archivos estáticos
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', __dirname + '/views');
 app.use('/', myRouter);
 module.exports = app
 

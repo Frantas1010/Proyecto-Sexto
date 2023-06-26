@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const app = require("./app");
+const app = require(__dirname + "/app");
 const dotenv = require("dotenv");
 
 //Carga de variables de entorno
