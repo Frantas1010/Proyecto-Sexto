@@ -15,6 +15,7 @@ header {
 }
 
 .logo {
+    image-rendering: auto;
     position: absolute;
     top: 30px;
     left: 50%;
