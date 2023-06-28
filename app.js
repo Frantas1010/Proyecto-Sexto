@@ -4,7 +4,7 @@ const openAI = require('openai');
 const bodyParser = require('body-parser');
 //const morgan = require('morgan');
 const path = require('path');
-const myRouter = require('./routes/myRoutes');
+const myRouter = require(__dirname + '/routes/myRoutes');
 
 // Importamos dotenv para acceder a variables de entorno
 require('dotenv').config();
