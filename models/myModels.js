@@ -9,19 +9,19 @@ const postSchema = new mongoose.Schema({
     },
     id: {
         type: Number,
-        required: true
+        required: false
     },
     longitud: {
         type: Number,
-        required: true
+        required: false
     },
     idioma: {
         type: String,
-        required: true
+        required: false
     },
     tags: {
         type: Array,
-        required: true,
+        required: false,
     },
     prompt: {
         type: String,
@@ -33,16 +33,20 @@ const postSchema = new mongoose.Schema({
     },
     edad: {
         type: Number,
-        required: true,
+        required: false,
     },
     genero: {
         type: String,
-        required: true,
+        required: false,
     },
     fecha: {
         type: Date,
         required: true,
     },
+    recomendaciones: {
+        type: Array,
+        required: false
+    }
 });
 
 //Creación del modelo Post
