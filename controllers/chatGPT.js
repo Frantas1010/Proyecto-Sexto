@@ -4,6 +4,8 @@ const { jsPDF } = require("jspdf");
 const fs = require("fs");
 const path = require("path");
 
+
+
 //responde con un objeto de js en el que haya llave'contenido'quesea un cuento,llave'titulo'el cual sea un titulo,llave'tag'en la que me des un arreglo con 3 tags relacionados,llave'genero'en la que clasifiques el cuento con algun genero:
 exports.consulta = (req, res, message, genero, longitud) => {
     const imagePath = path.join(
@@ -118,3 +120,4 @@ function TextoPDF(texto, imagePath) {
         return;
     }
 }
+
