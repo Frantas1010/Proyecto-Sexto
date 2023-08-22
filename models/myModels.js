@@ -31,10 +31,6 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    edad: {
-        type: Number,
-        required: false,
-    },
     genero: {
         type: String,
         required: false,

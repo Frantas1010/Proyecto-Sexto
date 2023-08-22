@@ -46,7 +46,14 @@
         </header>
 
         <img class="logo" src="/img/logo.jpeg" />
+        <script>
+            function prueba() {
+                var contenedor = document.getElementById("mostrar");
 
+                contenedor.style.visibility = "hidden";
+                contenedor.style.opacity = "0";
+            }
+        </script>
         <!-- The modal -->
         <div id="myModal" class="modal">
             <div class="modal-content">
@@ -81,8 +88,14 @@
                     <h3>Longitud del cuento:</h3>
                     <select name="longitud">
                         <option value="largo">Largo</option>
-                        <option value="muy corto">Corto</option>
                         <option value="corto">Medio</option>
+                        <option value="muy corto">Corto</option>
+                    </select>
+                    <h3>Idioma:</h3>
+                    <select name="idioma">
+                        <option value="Español">Español</option>
+                        <option value="Ingles">Ingles</option>
+                        <option value="Portugues">Portugues</option>
                     </select>
                     <div class="question-space"></div>
                     <!-- Palabras claves Imput -->
@@ -93,7 +106,10 @@
                         placeholder="Type here..." />
                     <div class="question-space"></div>
                     <!-- Boton crear cuento -->
-                    <button type="submit" class="btn btn-violet btn-lg">
+                    <button
+                        type="submit"
+                        class="btn btn-violet btn-lg"
+                        onclick="prueba()">
                         Generar cuento
                     </button>
                 </form>
@@ -101,6 +117,7 @@
         </div>
 
         <!-- Nueva modal con el cuento ya creado -->
+        <% if (mostrarRecuadro) { %>
         <div id="randomModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeRandomModal()">&times;</span>
@@ -109,39 +126,16 @@
                         <div class="col text-center">
                             <h2
                                 class="font-weight-bold text-uppercase lobster-font">
-                                El ratón Tomás
+                                <%= tit %>
                             </h2>
-                            <p class="open-sans-font">
-                                "Había una vez un pequeño ratón llamado Tomás.
-                                Tomás vivía en un pequeño agujero en la pared de
-                                una vieja casa. Aunque era diminuto, tenía
-                                grandes sueños y siempre estaba en busca de
-                                aventuras. Un día, mientras exploraba los
-                                rincones de la casa, Tomás encontró un mapa
-                                antiguo que parecía llevar un tesoro escondido.
-                                Emocionado, siguió el mapa y descubrió el
-                                misterio que este encerraba. Durante su
-                                travesía, Tomás se encontró con muchos
-                                obstáculos y desafíos. Pero su valentía y
-                                determinación lo llevaron a superar cada uno de
-                                ellos Finalmente, después de un largo recorrido,
-                                Tomás llegó al lugar indicado en el mapa. Allí,
-                                entre las raíces de un antiguo roble, encontré
-                                un cofre lleno de joyas brillantes y monedas de
-                                oro. Había encontrado el tesoro perdido. Lleno
-                                de alegría, Tomás volvió a su hogar y compartió
-                                el tesoro con su familia y amigos. Tomás
-                                aprendió que no importa cuán pequeño seas,
-                                siempre puedes lograr grandes cosas si tienes
-                                valentía y perseverancia. Y así, vivimos feliz
-                                para siempre, con el recuerdo de la emocionante
-                                aventura que cambió su vida para siempre."
-                            </p>
+                            <p class="open-sans-font"><%= cont %></p> <br>
+                            <p class="open-sans-font"><%= rec %></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <% } %>
 
         <!-- Footer con iconos -->
         <footer class="footer">
@@ -153,24 +147,14 @@
                 <path
                     d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,72h72a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm88,48H40a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16Zm109.66,13.66a8,8,0,0,1-11.32,0L206,177.36A40,40,0,1,1,217.36,166l20.3,20.3A8,8,0,0,1,237.66,197.66ZM184,168a24,24,0,1,0-24-24A24,24,0,0,0,184,168Z"></path>
             </svg>
-            <button id="toggleButton">
-                <svg class="icons1" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 256 256">
-                <path d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24ZM120,40h48v72L148.79,97.6a8,8,0,0,0-9.6,0L120,112Zm80,144H72a31.82,31.82,0,0,0-16,4.29V56A16,16,0,0,1,72,40h32v88a8,8,0,0,0,12.8,6.4L144,114l27.21,20.4A8,8,0,0,0,176,136a8,8,0,0,0,8-8V40h16Z"></path>
+            <svg
+                class="icons1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#000000"
+                viewBox="0 0 256 256">
+                <path
+                    d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24ZM120,40h48v72L148.79,97.6a8,8,0,0,0-9.6,0L120,112Zm80,144H72a31.82,31.82,0,0,0-16,4.29V56A16,16,0,0,1,72,40h32v88a8,8,0,0,0,12.8,6.4L144,114l27.21,20.4A8,8,0,0,0,176,136a8,8,0,0,0,8-8V40h16Z"></path>
             </svg>
-        </button>
-        <div class="sidebar" id="sidebar">
-            <ul>
-                <ul>
-                    <% info.forEach(function(dato) { %>
-                        <li>
-                            <strong><%= dato %></strong>
-                        </li>
-                    <% }); %>
-                </ul>                
-            </ul>
-        </div>
-        
-            </div>
             <svg
                 class="icons2"
                 xmlns="http://www.w3.org/2000/svg"

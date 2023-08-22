@@ -3,11 +3,11 @@ const cuento = require("../models/myModels");
 const { jsPDF } = require("jspdf");
 const fs = require("fs");
 const path = require("path");
-
-
-
+function funcionSisi() {
+    console.log("holahola");
+}
 //responde con un objeto de js en el que haya llave'contenido'quesea un cuento,llave'titulo'el cual sea un titulo,llave'tag'en la que me des un arreglo con 3 tags relacionados,llave'genero'en la que clasifiques el cuento con algun genero:
-exports.consulta = (req, res, message, genero, longitud) => {
+exports.consulta = (req, res, message, genero, longitud, idioma) => {
     const imagePath = path.join(
         __dirname,
         "..",
@@ -20,9 +20,10 @@ exports.consulta = (req, res, message, genero, longitud) => {
         .createCompletion({
             model: "text-davinci-003",
             prompt:
-                `quiero que me generes un cuento ${longitud} de ${genero} en base a mis claves tenga:
+                `quiero que me generes un cuento ${longitud} en ${idioma} de ${genero} en base a mis claves tenga:
         "--titulo--"{genera titulo de cuento}"--fintitulo--"
-        "--contenido--"{genera cuento}"--fincontenido--"` + message,
+        "--contenido--"{genera cuento}"--fincontenido--"
+        --reco--"{autores similares segun contenido de cuento,pone emojis Unicode q qede mas lindo}"--finreco--"` + message,
             temperature: 0.9,
             max_tokens: 3900,
             top_p: 1,
@@ -33,18 +34,8 @@ exports.consulta = (req, res, message, genero, longitud) => {
         .then((response) => {
             const mitexto = response.data.choices[0].text;
             const texto = mitexto.toLowerCase();
-            const titulo = texto.slice(
-                texto.indexOf(
-                    "--titulo--"
-                        .normalize("NFD")
-                        .replace(/[\u0300-\u036f]/g, "")
-                ) + "--titulo--".length,
-                texto.indexOf(
-                    "--fintitulo--"
-                        .normalize("NFD")
-                        .replace(/[\u0300-\u036f]/g, "")
-                )
-            );
+            const titulo = texto.slice(texto.indexOf("--titulo--".normalize("NFD").replace(/[\u0300-\u036f]/g, "")) + "--titulo--".length, texto.indexOf("--fintitulo--".normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
+            const recomendacion = texto.slice(texto.indexOf("--reco--".normalize("NFD").replace(/[\u0300-\u036f]/g, "")) + "--reco--".length, texto.indexOf("--finreco--".normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
             const contenido = texto.slice(
                 texto.indexOf(
                     "--contenido--"
@@ -71,8 +62,8 @@ exports.consulta = (req, res, message, genero, longitud) => {
             miCuento.save();
 
             TextoPDF(texto, imagePath);
-
-            res.send(texto);
+            const mostrarRecuadro = true;
+            res.render("home", {tit: titulo, cont: contenido, mostrarRecuadro, rec : recomendacion});
         });
 };
 
@@ -120,4 +111,3 @@ function TextoPDF(texto, imagePath) {
         return;
     }
 }
-

@@ -1,18 +1,8 @@
-const obtenerTitulos = require('./obCuentos');
-const express = require('express')
-const router = express.Router();
+exports.inicio = (req, res) => {
+    mostrarRecuadro = false;
+    res.render("home", { tit: "", cont: "", mostrarRecuadro });
+};
 
-
-exports.inicio = (req,res) =>{
-    obtenerTitulos((error, titulos) => {
-        if (error) {
-            console.error('Error:', error);
-        } else {
-            res.render('home', {info : titulos})
-        }
-    });
-}
-
-exports.form = (req,res) =>{
-    res.render('formulario')
-}
+exports.form = (req, res) => {
+    res.render("formulario");
+};
