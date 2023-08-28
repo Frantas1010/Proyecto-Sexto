@@ -314,3 +314,7 @@ button{
 .sidebar.open{
   right: 0;
 }
+
+.modal-content{
+  border-radius: 10px;
+}
