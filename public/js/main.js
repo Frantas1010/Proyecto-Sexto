@@ -19,3 +19,10 @@ function changeImage() {
   currentImageIndex = (currentImageIndex + 1) % imageSources.length;
   image.src = imageSources[currentImageIndex];
 }
+
+const togglebutton = document.getElementById('toggleButton')
+const sidebar = document.getElementById('sidebar')
+
+togglebutton.addEventListener('click', () => {
+  sidebar.classList.toggle('open')
+})

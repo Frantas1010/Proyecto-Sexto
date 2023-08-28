@@ -128,7 +128,8 @@
                                 class="font-weight-bold text-uppercase lobster-font">
                                 <%= tit %>
                             </h2>
-                            <p class="open-sans-font"><%= cont %></p> <br>
+                            <p class="open-sans-font"><%= cont %></p>
+                            <br />
                             <p class="open-sans-font"><%= rec %></p>
                         </div>
                     </div>
@@ -147,14 +148,26 @@
                 <path
                     d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,72h72a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm88,48H40a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16Zm109.66,13.66a8,8,0,0,1-11.32,0L206,177.36A40,40,0,1,1,217.36,166l20.3,20.3A8,8,0,0,1,237.66,197.66ZM184,168a24,24,0,1,0-24-24A24,24,0,0,0,184,168Z"></path>
             </svg>
-            <svg
-                class="icons1"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
-                viewBox="0 0 256 256">
-                <path
-                    d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24ZM120,40h48v72L148.79,97.6a8,8,0,0,0-9.6,0L120,112Zm80,144H72a31.82,31.82,0,0,0-16,4.29V56A16,16,0,0,1,72,40h32v88a8,8,0,0,0,12.8,6.4L144,114l27.21,20.4A8,8,0,0,0,176,136a8,8,0,0,0,8-8V40h16Z"></path>
-            </svg>
+            <button id="toggleButton">
+                <svg
+                    class="icons1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                    viewBox="0 0 256 256">
+                    <path
+                        d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24ZM120,40h48v72L148.79,97.6a8,8,0,0,0-9.6,0L120,112Zm80,144H72a31.82,31.82,0,0,0-16,4.29V56A16,16,0,0,1,72,40h32v88a8,8,0,0,0,12.8,6.4L144,114l27.21,20.4A8,8,0,0,0,176,136a8,8,0,0,0,8-8V40h16Z"></path>
+                </svg>
+            </button>
+            <div class="sidebar" id="sidebar">
+                <ul>
+                    <%info.forEach(function(dato) { %>
+                    <li>
+                        <strong><%= dato %></strong>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+
             <svg
                 class="icons2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +192,10 @@
         <script>
             var modal1 = document.getElementById("myModal");
             var modal2 = document.getElementById("randomModal");
-
+            var bot = document.getElementById("toggleButton");
+            function toggleButton(botonn) {
+                botonn.class.display = "open";
+            }
             function openModal(modal) {
                 modal.style.display = "block";
             }
