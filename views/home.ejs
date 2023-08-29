@@ -33,6 +33,7 @@
     <body>
         <!-- Navbar -->
         <header>
+            <a class="text" style="font-weight: bold;  font-size: xx-large; padding: 0px; text-decoration: none; color: rgb(211, 43, 226);" href="#">Cuentum</a>
             <button id="abrir" class="abrir-menu">
                 <i class="bi bi-list"></i>
             </button>
@@ -41,9 +42,9 @@
                     <i class="bi bi-x"></i>
                 </button>
                 <ul class="nav-list">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Qué hacemos</a></li>
-                    <li><a href="#">lenguage</a></li>
+                    <li></li>
+                    <li><a class="text" href="#">Qué hacemos</a></li>
+                    <li><a class="text" href="#">lenguage</a></li>
                 </ul>
             </nav>
         </header>
@@ -66,7 +67,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col text-center">
-                            <h2 style="font-family: 'Courgette', cursive;">
+                            <h2 class="text">
                                 Crea tu cuento
                             </h2>
                         </div>
@@ -77,43 +78,43 @@
                 <!-- formulario hecho con select -->
                 <form action="/consultar" method="post">
                     <!-- Genero literario -->
-                    <h3 style="font-family: 'Courgette', cursive;" >Elige un género literario:</h3>
-                    <select style="font-family: 'Courgette', cursive; margin-top: 6px; padding: 2px;" name="genero" id="selectOption1">
-                        <option style="font-family: 'Courgette', cursive;" value="Comedia">Comedia</option>
-                        <option style="font-family: 'Courgette', cursive;" value="Terror">Terror</option>
-                        <option style="font-family: 'Courgette', cursive;" value="Romance">Romance</option>
-                        <option style="font-family: 'Courgette', cursive;" value="Misterio">Misterio</option>
-                        <option style="font-family: 'Courgette', cursive;" value="Infantil">Infantil</option>
+                    <h3 class="text" >Elige un género literario:</h3>
+                    <select class="text" style="margin-top: 6px; padding: 2px;" name="genero" id="selectOption1">
+                        <option class="text" value="Comedia">Comedia</option>
+                        <option class="text" value="Terror">Terror</option>
+                        <option class="text" value="Romance">Romance</option>
+                        <option class="text" value="Misterio">Misterio</option>
+                        <option class="text" value="Infantil">Infantil</option>
                     </select>
                     <div class="question-space"></div>
                     <!-- Esto hace que haya espacio entre pregunta y pregunta -->
                     <!-- Longitud del cuento -->
-                    <h3 style="font-family: 'Courgette', cursive;" >Longitud del cuento:</h3>
-                    <select style="font-family: 'Courgette', cursive; margin-top: 6px; padding: 2px;" name="longitud">
-                        <option style="font-family: 'Courgette', cursive;" value="largo">Largo</option>
-                        <option style="font-family: 'Courgette', cursive;" value="corto">Medio</option>
-                        <option style="font-family: 'Courgette', cursive;" value="muy corto">Corto</option>
+                    <h3 class="text" >Longitud del cuento:</h3>
+                    <select class="text" style="margin-top: 6px; padding: 2px;" name="longitud">
+                        <option class="text" value="largo">Largo</option>
+                        <option class="text" value="corto">Medio</option>
+                        <option class="text" value="muy corto">Corto</option>
                     </select>
-                    <h3 style="font-family: 'Courgette', cursive;" >Idioma:</h3>
-                    <select style="font-family: 'Courgette', cursive; margin-top: 6px; padding: 2px;" name="idioma">
-                        <option style="font-family: 'Courgette', cursive;" value="Español">Español</option>
-                        <option style="font-family: 'Courgette', cursive;" value="Ingles">Ingles</option>
-                        <option style="font-family: 'Courgette', cursive;" value="Portugues">Portugues</option>
+                    <h3 class="text" >Idioma:</h3>
+                    <select class="text" style="margin-top: 6px; padding: 2px;" name="idioma">
+                        <option class="text" value="Español">Español</option>
+                        <option class="text" value="Ingles">Ingles</option>
+                        <option class="text" value="Portugues">Portugues</option>
                     </select>
                     <div class="question-space"></div>
                     <!-- Palabras claves Imput -->
-                    <h3 style="font-family: 'Courgette', cursive;" >Palabras claves:</h3>
+                    <h3 class="text" >Palabras claves:</h3>
                     <input 
-                        style="font-family: 'Courgette', cursive;"
+                        class="text"
                         type="text"
                         name="clave"
                         placeholder="Escribre aqui..." />
                     <div class="question-space"></div>
                     <!-- Boton crear cuento -->
                     <button
-                        style="font-family: 'Courgette', cursive; padding: 15px; border-radius: 10px; font-weight: bold; font-size: large;"
+                        style="padding: 15px; border-radius: 10px; font-weight: bold; font-size: large;"
                         type="submit"
-                        class="btn btn-violet btn-lg"
+                        class="text btn btn-violet btn-lg"
                         onclick="prueba()">
                         Generar cuento
                     </button>

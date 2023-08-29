@@ -51,7 +51,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.5rem;
+      padding: 20px;
       background-color: #FFF280 ;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
   }
@@ -66,6 +66,7 @@
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 3);
       border: 3px solid #6200a3;
   }
+  
   
   
   .nav-list {
@@ -318,4 +319,8 @@ button{
 .modal-content{
   border-radius: 10px;
   background-color: #ec97fdb9;
+}
+
+.text {
+  font-family: 'Courgette', cursive;
 }
