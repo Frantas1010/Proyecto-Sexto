@@ -79,6 +79,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col text-center">
+                            
                             <h2 class="text">
                                 Crea tu cuento
                             </h2>
@@ -86,7 +87,6 @@
                     </div>
                 </div>
                 <div class="question-space"></div>
-
                 <!-- formulario hecho con select -->
                 <form action="/consultar" method="post">
                     <!-- Genero literario -->
@@ -123,12 +123,9 @@
                         placeholder="Escribre aqui..." />
                     <div class="question-space"></div>
                     <!-- Boton crear cuento -->
-                    <button
-                        style="padding: 15px; border-radius: 10px; font-weight: bold; font-size: large;"
-                        type="submit"
-                        class="btngenerar text btn btn-violet btn-lg"
-                        onclick="prueba()">
-                        Generar cuento
+                
+                    <button type="submit" class="button" onclick="this.classList.toggle('button--loading'); prueba();">
+                        <span class="button__text">Generar cuento</span>
                     </button>
                 </form>
             </div>
@@ -224,13 +221,7 @@
             function closeRandomModal() {
                 modal2.style.display = "none";
             }
-            function submitForm() {
-                closeModal(modal1);
-                // Agregar un retraso de 2 segundos antes de mostrar la segunda modal
-                setTimeout(function () {
-                    openModal(modal2);
-                }, 2000); // 2000
-            }
+         
 
             function crearCuento() {
                 var modal = document.getElementById("myModal");
