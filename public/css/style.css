@@ -140,11 +140,6 @@
       margin: 0;
       padding: 0;
   }
-  .body{
-    background-color: #f7e1c7;
-    margin: 0;
-    padding: 0;
-  }
   .footer {
       background-color: #89FE80;
       padding: 0.5rem;
@@ -197,6 +192,18 @@
       border-color: #000000;
       box-shadow: 0px 5px 4px rgba(0, 0, 0, 1);   
       cursor: pointer;
+    }
+
+    .obj1:hover {
+      background-color: #fc658d;
+    }
+
+    .btngenerar:hover{
+      background-color: #f37597;
+    }
+
+    .select {
+      border-radius: 5px;
     }
   
     .obj2{
@@ -312,6 +319,18 @@ button{
   transition: right 0.3s ease;
 }
 
+.topbar{
+  display: flex;
+  position: fixed;
+  background-color: #cf85ff;
+  top: -300px;
+  transition: right 0.3s ease;
+}
+
+.topbar.show{
+  top: 300px
+}
+
 .sidebar.open{
   right: 0;
 }
@@ -323,4 +342,23 @@ button{
 
 .text {
   font-family: 'Courgette', cursive;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.308);
+}
+
+.cont {
+  display: flex;
+  height: 100%;
+  align-content: center;
+  align-self: center;
+}
+
+.contcard{
+  max-width: 300px;
+  max-height: 400px;
+  margin: 30px;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.308);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

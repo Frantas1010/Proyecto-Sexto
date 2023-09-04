@@ -26,3 +26,10 @@ const sidebar = document.getElementById('sidebar')
 togglebutton.addEventListener('click', () => {
   sidebar.classList.toggle('open')
 })
+
+const toggleabout = document.getElementById('toggleAbout')
+const topbar = document.getElementById('topbar')
+
+toggleabout.addEventListener('click', () => {
+  topbar.classList.toggle('show')
+})

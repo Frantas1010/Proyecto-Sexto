@@ -42,12 +42,16 @@
                     <i class="bi bi-x"></i>
                 </button>
                 <ul class="nav-list">
-                    <li></li>
-                    <li><a class="text" href="#">Qué hacemos</a></li>
+                    <li>
+                        <button id="toggleAbout"> <a style="font-size: medium;" class="text" href="#">About</a> </button>
+                    </li>
                     <li><a class="text" href="#">lenguage</a></li>
                 </ul>
             </nav>
         </header>
+        <div class="topbar" id="topbar" >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, nobis, eligendi voluptatum dolor aliquam ipsum distinctio voluptates pariatur placeat eveniet consequuntur voluptatibus quisquam, labore earum ullam modi? Ex, totam sequi?</p>
+        </div>
 
         <img class="logo" src="/img/logo.jpeg" />
         <script>
@@ -58,6 +62,14 @@
                 contenedor.style.opacity = "0";
             }
         </script>
+
+        <div class="cont">
+            <div class="contcard">
+                <p class="text" style="font-size: large; padding: 2px;">Titulo</p>
+                <p class="text"> Loremoluptates quas distinctio expedita ipsum repellat! Expedita minus doloribus repellendus officia rem soluta tempore itaque iusto, architecto iste corporis quidem facilis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum officia expedita maiores, sapiente hic modi maxime obcaecati optio dolorem nisi beatae et iste ex fuga vitae illo excepturi minus saepe? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, facere qui. Voluptatem nam quo, id iusto illum unde non accusamus, saepe voluptatum tenetur fugit aut atque vitae laboriosam ullam ipsum.</p>
+            </div>
+        </div>
+
         <!-- The modal -->
         <div id="myModal" class="modal">
             <div class="modal-content">
@@ -79,7 +91,7 @@
                 <form action="/consultar" method="post">
                     <!-- Genero literario -->
                     <h3 class="text" >Elige un género literario:</h3>
-                    <select class="text" style="margin-top: 6px; padding: 2px;" name="genero" id="selectOption1">
+                    <select class="select text" style="margin-top: 6px; padding: 2px;" name="genero" id="selectOption1">
                         <option class="text" value="Comedia">Comedia</option>
                         <option class="text" value="Terror">Terror</option>
                         <option class="text" value="Romance">Romance</option>
@@ -90,13 +102,13 @@
                     <!-- Esto hace que haya espacio entre pregunta y pregunta -->
                     <!-- Longitud del cuento -->
                     <h3 class="text" >Longitud del cuento:</h3>
-                    <select class="text" style="margin-top: 6px; padding: 2px;" name="longitud">
+                    <select class="select text" style="margin-top: 6px; padding: 2px;" name="longitud">
                         <option class="text" value="largo">Largo</option>
                         <option class="text" value="corto">Medio</option>
                         <option class="text" value="muy corto">Corto</option>
                     </select>
                     <h3 class="text" >Idioma:</h3>
-                    <select class="text" style="margin-top: 6px; padding: 2px;" name="idioma">
+                    <select class="select text" style="margin-top: 6px; padding: 2px;" name="idioma">
                         <option class="text" value="Español">Español</option>
                         <option class="text" value="Ingles">Ingles</option>
                         <option class="text" value="Portugues">Portugues</option>
@@ -114,7 +126,7 @@
                     <button
                         style="padding: 15px; border-radius: 10px; font-weight: bold; font-size: large;"
                         type="submit"
-                        class="text btn btn-violet btn-lg"
+                        class="btngenerar text btn btn-violet btn-lg"
                         onclick="prueba()">
                         Generar cuento
                     </button>
