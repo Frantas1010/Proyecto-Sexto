@@ -33,3 +33,21 @@ const topbar = document.getElementById('topbar')
 toggleabout.addEventListener('click', () => {
   topbar.classList.toggle('show')
 })
+
+const customButtonSVG = document.querySelector(".custom-button-svg");
+const customModal = document.querySelector(".custom-modal");
+
+// Agregamos un evento al botón SVG para abrir la modal
+customButtonSVG.addEventListener("click", () => {
+  customModal.style.display = "block";
+});
+
+// Agregamos un evento para cerrar la modal cuando se haga clic fuera de ella
+window.addEventListener("click", (event) => {
+  if (event.target == customModal) {
+    customModal.style.display = "none";
+  }
+  // Obtenemos el botón SVG y la modal por su clase
+ });
+
+

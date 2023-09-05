@@ -281,7 +281,7 @@
     .open-sans-font {
         font-family: 'Open Sans', sans-serif;
     }
-  
+
 
 #mostrar{
   z-index: 1000;
@@ -399,3 +399,29 @@ button{
     transform: rotate(1turn);
   }
 }
+
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.custom-modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el botón SVG */
+.custom-button-svg {
+  cursor: pointer;
+}
+

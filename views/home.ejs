@@ -43,7 +43,7 @@
                 </button>
                 <ul class="nav-list">
                     <li>
-                        <button id="toggleAbout"> <a style="font-size: medium;" class="text" href="#">About</a> </button>
+                        <button id="toggleAbout"> About </button>
                     </li>
                     <li><a class="text" href="#">lenguage</a></li>
                 </ul>
@@ -69,7 +69,6 @@
                 <p class="text"> Loremoluptates quas distinctio expedita ipsum repellat! Expedita minus doloribus repellendus officia rem soluta tempore itaque iusto, architecto iste corporis quidem facilis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum officia expedita maiores, sapiente hic modi maxime obcaecati optio dolorem nisi beatae et iste ex fuga vitae illo excepturi minus saepe? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, facere qui. Voluptatem nam quo, id iusto illum unde non accusamus, saepe voluptatum tenetur fugit aut atque vitae laboriosam ullam ipsum.</p>
             </div>
         </div>
-
         <!-- The modal -->
         <div id="myModal" class="modal">
             <div class="modal-content">
@@ -130,6 +129,11 @@
                 </form>
             </div>
         </div>
+
+
+
+
+
 
         <!-- Nueva modal con el cuento ya creado -->
         <% if (mostrarRecuadro) { %>
@@ -192,13 +196,26 @@
                     d="M229.66,109.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,112H165a88,88,0,0,0-85.23,66,8,8,0,0,1-15.5-4A103.94,103.94,0,0,1,165,96h39.71L170.34,61.66a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,109.66ZM192,208H40V88a8,8,0,0,0-16,0V208a16,16,0,0,0,16,16H192a8,8,0,0,0,0-16Z"></path>
             </svg>
             <svg
-                class="icons2"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
-                viewBox="0 0 256 256">
-                <path
-                    d="M144,80a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H152A8,8,0,0,1,144,80Zm104,40H152a8,8,0,0,0,0,16h96a8,8,0,0,0,0-16Zm0,48H176a8,8,0,0,0,0,16h72a8,8,0,0,0,0-16Zm-96.25,22a8,8,0,0,1-5.76,9.74,7.55,7.55,0,0,1-2,.26,8,8,0,0,1-7.75-6c-6.16-23.94-30.34-42-56.25-42s-50.09,18.05-56.25,42a8,8,0,0,1-15.5-4c5.59-21.71,21.84-39.29,42.46-48a48,48,0,1,1,58.58,0C129.91,150.71,146.16,168.29,151.75,190ZM80,136a32,32,0,1,0-32-32A32,32,0,0,0,80,136Z"></path>
-            </svg>
+            class="icons2 custom-button-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+            viewBox="0 0 256 256">
+            <path
+                d="M144,80a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H152A8,8,0,0,1,144,80Zm104,40H152a8,8,0,0,0,0,16h96a8,8,0,0,0,0-16Zm0,48H176a8,8,0,0,0,0,16h72a8,8,0,0,0,0-16Zm-96.25,22a8,8,0,0,1-5.76,9.74,7.55,7.55,0,0,1-2,.26,8,8,0,0,1-7.75-6c-6.16-23.94-30.34-42-56.25-42s-50.09,18.05-56.25,42a8,8,0,0,1-15.5-4c5.59-21.71,21.84-39.29,42.46-48a48,48,0,1,1,58.58,0C129.91,150.71,146.16,168.29,151.75,190ZM80,136a32,32,0,1,0-32-32A32,32,0,0,0,80,136Z"></path>
+        </svg>
+    
+        <!-- Modal -->
+        <div class="custom-modal">
+            <div class="custom-modal-content">
+                <!-- Formulario para ingresar el nombre -->
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <br>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
             <button id="obj1" class="obj1" onclick="crearCuento()"></button>
         </footer>
 
