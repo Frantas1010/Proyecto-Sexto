@@ -5,16 +5,7 @@
   row-gap: 25px;
   image-rendering: center;
 }
-h1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: justify; /* Para justificar el texto */
-  max-width: 600px; /* Ajusta esto según el ancho deseado */
-  padding: 20px;
-  border: 1px solid #ccc;
-  font-family: 'PT Sans', sans-serif;
-}
+
 .terror {
   animation-name: terrorAnimation;
   animation-duration: 5s;
@@ -313,9 +304,9 @@ button{
   top: 100px;
   right: -300px;
   width: 300px;
-  height: 200px;
+  height: fit-content;
   border-radius: 10px;
-  background: white;
+  background-color: #ff96f6;
   padding: 20px;
   transition: right 0.3s ease;
 }
@@ -442,6 +433,11 @@ button{
   padding: 0px; 
   text-decoration: none; 
   color: rgb(211, 43, 226);
+}
+
+.formm {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 400px) {
