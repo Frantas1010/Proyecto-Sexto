@@ -182,11 +182,11 @@ body{
   background-size: cover;
   border-radius: 45px;
   position: absolute;
-  top: -55px;
+  top: -45px;
   left: 50%;
   transform: translateX(-50%);
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   border-color: #000000;
   box-shadow: 0px 5px 4px rgba(0, 0, 0, 1);   
   cursor: pointer;
@@ -303,16 +303,25 @@ button{
   transition: right 0.3s ease;
 }
 
+.aboutcont{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .topbar{
-  display: flex;
   position: fixed;
-  background-color: #cf85ff;
-  top: -300px;
+  top: 100px;
+  right: -300px;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  background: white;
+  padding: 20px;
   transition: right 0.3s ease;
 }
 
 .topbar.show{
-  top: 300px
+  right: 0px;
 }
 
 .sidebar.open{
@@ -438,5 +447,9 @@ button{
 @media (max-width: 400px) {
   .cuentum {
     font-size: x-large;
+  }
+  .obj1{
+    width: 60px;
+    height: 60px;
   }
 }
