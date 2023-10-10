@@ -1,6 +1,15 @@
+const obtenerTitulos = require('./obCuentos');
+
+
 exports.inicio = (req, res) => {
-    mostrarRecuadro = false;
-    res.render("home", { tit: "", cont: "", mostrarRecuadro });
+    obtenerTitulos((error,titulos)=> {
+        if(error){
+            console.log('Error', error);
+        }else{
+            mostrarRecuadro = false;
+            res.render("home", { tit: "", cont: "", mostrarRecuadro,  info : titulos });
+        }
+    })
 };
 
 exports.form = (req, res) => {

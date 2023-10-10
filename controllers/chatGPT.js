@@ -3,9 +3,7 @@ const cuento = require("../models/myModels");
 const { jsPDF } = require("jspdf");
 const fs = require("fs");
 const path = require("path");
-function funcionSisi() {
-    console.log("holahola");
-}
+
 //responde con un objeto de js en el que haya llave'contenido'quesea un cuento,llave'titulo'el cual sea un titulo,llave'tag'en la que me des un arreglo con 3 tags relacionados,llave'genero'en la que clasifiques el cuento con algun genero:
 exports.consulta = (req, res, message, genero, longitud, idioma) => {
     const imagePath = path.join(
@@ -60,10 +58,17 @@ exports.consulta = (req, res, message, genero, longitud, idioma) => {
             });
 
             miCuento.save();
+            const obtenerTitulos = require('./obCuentos');
 
             TextoPDF(texto, imagePath);
-            const mostrarRecuadro = true;
-            res.render("home", {tit: titulo, cont: contenido, mostrarRecuadro, rec : recomendacion});
+            let mostrarRecuadro = false;
+            obtenerTitulos((error,titulos)=> {
+                if(error)console.log('Error', error);
+                else{
+                    let mostrarRecuadro = true;
+                    res.render("home", {tit: titulo, cont: contenido, mostrarRecuadro, rec : recomendacion, info : titulos});
+                }
+            })
         });
 };
 
